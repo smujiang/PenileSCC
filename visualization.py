@@ -29,8 +29,8 @@ plt.close()
 
 
 slide_id = list(df.iloc[:, -1])
-slide_id_int = [int(x) for x in lb]
-slide_id_ind = [slide_id_int.index(x) for x in set(slide_id_int)]
+slide_id_set = list(set(slide_id))
+slide_id_ind = [slide_id_set.index(x) for x in slide_id]
 encoded_colors = encode_integers_to_colors(slide_id_ind)
 
 dm_red = umap.UMAP(random_state=12)
